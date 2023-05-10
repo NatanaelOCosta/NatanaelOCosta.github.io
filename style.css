@@ -21,15 +21,15 @@ body {
   width: 100%;
   height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
 
 label {
   position: relative;
-  width: 10%;
-  height: 8%;
+  top: 1%;
+  left: .5%;
+  width: 120px;
+  height: 45px;
   display: block;
   background: url('images/images1.gif');
   background-size: cover;
