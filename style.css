@@ -27,6 +27,7 @@ body {
 
 label {
   position: absolute;
+  float: right;
   top: 1%;
   right: 1%;
   width: 120px;
