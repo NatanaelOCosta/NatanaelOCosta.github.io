@@ -1,8 +1,8 @@
 :root {
   --dark-background-color: #26292b;
   --dark-secound-color: #2e3239;
-  --dark-accent: #5f7adb;
-  --dark-secound-accent: #a2b2ee;
+  --dark-accent: #30a9de;
+  --dark-secound-accent: #a2ded0;
   --dark-highlight-color: #f4fefd;
 
   --light-background-color: #f5f5f5;
@@ -15,7 +15,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 
 body {
@@ -34,9 +34,7 @@ label {
   width: 120px;
   height: 45px;
   display: block;
-  background: url('images/imagem1.jpg');
-  background-size: cover;
-  background-position: center;
+  background: url('images/imagem1.jpg') center/cover;
   border: 5px solid rgba(198, 247, 253, 0.3);
   border-radius: 100px;
   cursor: pointer;
@@ -75,10 +73,11 @@ label::before {
   width: 100%;
   min-height: 100vh;
   height: auto;
-  background: var(--light-background-color);
+  background: linear-gradient(var(--light-background-color), var(--dark-highlight-color));
+  background: -webkit-linear-gradient(var(--light-background-color), var(--dark-highlight-color));
   transition: all 1s ease;
   color: var(--light-highlight-color);
-  padding: 10px;
+  padding: 1.5vw;
 }
 
 input:checked ~ label::after {
@@ -88,17 +87,16 @@ input:checked ~ label::after {
 }
 input:checked ~ label::before {
   left: 100%;
-  border: 5px solid rgba(90, 79, 136, 0.2);;
+  border: 5px solid rgba(90, 79, 136, 0.2);
   transform: translateX(-100%);
 }
 input:checked ~ label {
-  background: url('images/imagem2.jpg');
-  background-size: cover;
-  background-position: center;
+  background: url('images/imagem2.jpg') center/cover;
   border: 5px solid rgba(90, 79, 136, 0.2);
 }
 input:checked ~ .background {
-  background: var(--dark-background-color);
+  background: linear-gradient(var(--dark-background-color), var(--dark-secound-color));
+  background: -webkit-linear-gradient(var(--dark-background-color), var(--dark-secound-color));
   color: var(--dark-highlight-color);
 }
 input {
@@ -113,42 +111,86 @@ input:checked ~ .background .menu {
 img#natan {
   width: 25vw;
   position: relative;
+  margin: 0;
 }
 
 header {
   display: flex;
   align-items: flex-start;
-  height: 100vh;
   flex-direction: column;
-  margin-left: 1vw;
-  margin-top: 2vw;
+  margin: 0 0 20px 0;
+  font-family: 'Unbounded', sans-serif;
 }
 
-header h1 {
-  font-size: 3vw;
+.bloco {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 0;
+  border: 1px solid red;
+  width: 60%;
+  position: relative;
+  float: right;
 }
 
-header h3 {
-  font-size: 1.5vw;
+.bloco p {
+  text-align: justify;
 }
 
-Estilos para telas grandes 
+.sobre {
+  position: absolute;
+  top: 10vw;
+  right: 1.5vw;
+  width: 60%;
+}
+
+.sobre h4 {
+  text-align: center;
+}
+
+.sobre p {
+  text-align: justify;
+  text-indent: 25px;
+  margin-top: 5px;
+}
+
+.sobre p:first-of-type {
+  margin-top: 10px;
+}
+
+/*Estilos para telas grandes*/
 @media screen and (min-width: 1024px) {
-
+  header h1 {
+    font-size: 3vw;
+  }
+  
+  header h3 {
+    font-size: 1.5vw;
+  }
 }
 
- Estilos para telas médias 
+/*Estilos para telas médias*/
 @media screen and (max-width: 1023px) and (min-width: 768px) {
 
 }
 
- Estilos para telas pequenas 
+/*Estilos para telas pequenas*/
 @media screen and (max-width: 767px) {
   header h1 {
-    font-size: 500px;
+    font-size: 8vw;
   }
 
   header h3 {
-    font-size: 3vw;
+    font-size: 5vw;
+  }
+
+  img#natan {
+    width: 35vw;
+  }
+
+  .sobre {
+    position: absolute;
+    top: 21vw;
+    right: 0;
+    font-size: 2.5vw;
   }
 }
