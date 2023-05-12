@@ -1,14 +1,14 @@
 :root {
+  --light-background-color: #f5f5f5;
+  --light-secound-color: #0a9396;
+  --light-accent: #65C9FF;
+  --light-highlight-color: #26292b;
+
   --dark-background-color: #26292b;
   --dark-secound-color: #2e3239;
   --dark-accent: #30a9de;
   --dark-secound-accent: #a2ded0;
   --dark-highlight-color: #f4fefd;
-
-  --light-background-color: #f5f5f5;
-  --light-secound-color: #0a9396;
-  --light-accent: #65C9FF;
-  --light-highlight-color: #26292b;
 }
 
 /*DESIGN DAS CORES EM MODO CLARO*/
@@ -32,8 +32,7 @@ input:checked ~ label {
 }
 
 input:checked ~ .background {
-  background: linear-gradient(var(--dark-background-color), var(--dark-secound-color));
-  background: -webkit-linear-gradient(var(--dark-background-color), var(--dark-secound-color));
+  background: var(--dark-background-color);
   color: var(--dark-highlight-color);
 }
 
@@ -69,10 +68,9 @@ body {
 
 /*BOTAO DE MODO CLARO E ESCURO*/
 label {
-  position: absolute;
-  float: right;
-  top: 1%;
-  right: 1%;
+  position: fixed;
+  top: 1.5vw;
+  right: 1.5vw;
   width: 120px;
   height: 45px;
   display: block;
@@ -82,7 +80,6 @@ label {
   cursor: pointer;
   transition: .8s ease;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
-  z-index: 1;
 }
 
 label::after {
@@ -115,27 +112,25 @@ label::before {
 
 
 .background {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 150vw; /* AJUSTEI ASSIM PARA OCUPAR TODO O BODY. QUANDO INSERIR O FOOTER, VERIFICAR SE ESSE VALOR AINDA É O CORRETO */
-  background: linear-gradient(var(--light-background-color), var(--dark-highlight-color));
-  background: -webkit-linear-gradient(var(--light-background-color), var(--dark-highlight-color));
+  min-height: 100vw;
+  background: var(--light-background-color);
   transition: all 1s ease;
   color: var(--light-highlight-color);
   padding: 1.5vw;
   box-sizing: border-box;
+  z-index: -1;
+  overflow-y: auto;
 }
-
 
 input {
   display: none;
 }
 
-
 img#natan {
-  width: 25vw;
   position: relative;
   margin: 0;
 }
@@ -150,11 +145,10 @@ header {
 
 
 .sobre {
-  position: absolute;
-  top: 10vw;
-  right: 1.5vw;
+  position: relative;
+  margin-left: 38%;
+  margin-top: -55%;
   width: 60%;
-  height: auto;
 }
 
 .sobre h4 {
@@ -172,10 +166,7 @@ header {
 }
 
 .full-timeline {
-  position: absolute;
-  top: 25vw;
-  right: 1.5vw;
-  width: 60%;
+  position: relative;
   height: auto;
 }
 
@@ -220,8 +211,6 @@ header {
   color: var(--light-secound-color);
 }
 
-
-
 .timeline p {
   text-align: justify;
 }
@@ -230,7 +219,7 @@ header {
   color: var(--light-secound-color);
   display: inline-block;
   margin-top: 10px;
-  margin-right: 10px;
+  margin-right: 2px;
   padding: 5px 10px;
   border-radius: 5px;
   background-color: var(--light-accent);
@@ -239,6 +228,7 @@ header {
 
 .timeline p:first-of-type {
   font-weight: bold;
+  margin-bottom: 4px;
 }
 
 .timeline-item {
@@ -248,7 +238,7 @@ header {
 
 .timeline-date {
   font-weight: bold;
-  min-width: 70px;
+  width: 70px;
   font-size: 12px;
   text-align: center;
   border: 1px solid transparent;
@@ -257,6 +247,8 @@ header {
 .timeline-content {
   margin-left: 20px;
 }
+
+
 
 
 /*ESTRUTURA DOS COMPONENTES DO SITE*/
@@ -271,31 +263,114 @@ header {
 
 
 
+
 /*DESIGN ADAPTADO PARA TELAS DE SMARTPHONES*/
 /* Smartphones em orientação retrato */
 @media screen and (max-width: 480px) {
-  header h1 {
-    font-size: 8vw;
+  label {
+    top: 2vw;
   }
 
-  header h3 {
-    font-size: 5vw;
+  h1 {
+    font-size: 7.5vw;
+  }
+
+  h3 {
+    font-size: 4.5vw;
+  }
+
+  h4 {
+    font-size: 3vw;
+  }
+
+  p {
+    font-size: 3vw;
   }
 
   img#natan {
-    width: 35vw;
+    width: 30vw;
   }
 
   .sobre {
-    position: absolute;
-    top: 21vw;
+    top: 20vw;
     font-size: 2.5vw;
+  }
+
+  .full-timeline {
+    margin: 25% 0 0 13%;
+    width: 88%;
+  }
+
+  .full-timeline h4 {
+    margin-left: 28%;
+  }
+
+  .timeline-date {
+    min-width: 70px;
+    font-size: 2vw;
+  }
+
+  .competencias {
+    font-size: 2.5vw;
+  }
+
+  .background {
+    height: 100%;
   }
 }
 
 /* Smartphones em orientação paisagem */
 @media screen and (max-width: 767px) and (orientation: landscape) {
-  /* Estilos para smartphones em orientação paisagem */
+  label {
+    top: 2vw;
+  }
+
+  h1 {
+    font-size: 7.5vw;
+  }
+
+  h3 {
+    font-size: 4.5vw;
+  }
+
+  h4 {
+    font-size: 3vw;
+  }
+
+  p {
+    font-size: 3vw;
+  }
+
+  img#natan {
+    width: 10vw;
+  }
+
+  .sobre {
+    top: 20vw;
+    font-size: 2.5vw;
+  }
+
+  .full-timeline {
+    margin: 25% 0 0 13%;
+    width: 88%;
+  }
+
+  .full-timeline h4 {
+    margin-left: 28%;
+  }
+
+  .timeline-date {
+    min-width: 70px;
+    font-size: 2vw;
+  }
+
+  .competencias {
+    font-size: 2.5vw;
+  }
+
+  .background {
+    height: 100%;
+  }
 }
 /*FIM DESIGN ADAPTADO PARA TELAS DE SMARTPHONES*/
 
@@ -322,7 +397,23 @@ header {
 /*DESIGN ADAPTADO PARA TELAS DE NOTEBOOK*/
 /* Noteboks com telas de tamanho médio */
 @media screen and (min-width: 1200px) and (max-width: 1439px) {
-  /* Estilos para notebooks com telas de tamanho médio */
+  header h1 {
+    font-size: 8vw;
+  }
+
+  header h3 {
+    font-size: 5vw;
+  }
+
+  img#natan {
+    width: 35vw;
+  }
+
+  .sobre {
+    position: absolute;
+    top: 21vw;
+    font-size: 2.5vw;
+  }
 }
 
 /* Noteboks com telas de tamanho grande */
