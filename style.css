@@ -11,6 +11,10 @@
   --dark-highlight-color: #f4fefd;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /*DESIGN DAS CORES EM MODO CLARO*/
 
 /*DESIGN DAS CORES EM MODO ESCURO*/
@@ -36,9 +40,12 @@ input:checked ~ .background {
 }
 
 input:checked ~ header,
+input:checked ~ nav ul li a,
 input:checked ~ section,
 input:checked ~ aside,
-input:checked ~ footer {
+input:checked ~ .contato a,
+input:checked ~ footer,
+input:checked ~ footer a {
   color: var(--dark-highlight-color);
 }
 
@@ -126,7 +133,6 @@ label::before {
 }
 /*FIM BOTAO DE MODO CLARO E ESCURO*/
 
-
 input {
   display: none;
 }
@@ -167,8 +173,50 @@ img#natan {
   margin-top: 10px;
 }
 
+nav {
+  position: relative;
+  top: 120px;
+  left: 1.5vw;
+  width: 15%;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  position: relative;
+}
+
+nav a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+nav a:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background-color: var(--light-accent);
+  transform: scaleY(0);
+  transition: transform 0.3s;
+}
+
+nav a:hover:before {
+  transform: scaleY(1);
+}
+
+
 .full-timeline {
   position: relative;
+  margin-top: -30px;
   height: auto;
   width: 80%;
   margin-left: 19.5%;
@@ -233,6 +281,7 @@ img#natan {
 .timeline p:first-of-type {
   font-weight: bold;
   margin-bottom: 4px;
+  transition: all .3s ease;
 }
 
 .timeline-item {
@@ -258,7 +307,6 @@ img#natan {
 
 #portfolio h4 {
   text-align: center;
-  font-size: 18px;
   margin-bottom: 20px;
 }
 
@@ -309,6 +357,33 @@ img#natan {
 .thumbnail img {
   overflow: hidden;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+.contato {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.contato h4 {
+  margin-bottom: 10px;
+}
+
+.contato p {
+  margin-bottom: 20px;
+}
+
+.contato a {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contato img {
+  width: 30px;
+  vertical-align: middle;
+  margin-right: 5px;
 }
 
 
