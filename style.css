@@ -15,13 +15,13 @@
 
 /*DESIGN DAS CORES EM MODO ESCURO*/
 input:checked ~ label::after {
-  left: 96%;
+  left: 93.5%;
   transform: translateX(-100%);
   background: #777ba5;
 }
 
 input:checked ~ label::before {
-  left: 100%;
+  left: 99%;
   border: 5px solid rgba(90, 79, 136, 0.2);
   transform: translateX(-100%);
 }
@@ -33,12 +33,13 @@ input:checked ~ label {
 
 input:checked ~ .background {
   background: var(--dark-background-color);
-  color: var(--dark-highlight-color);
 }
 
-input:checked ~ .background .menu {
-  background: var(--dark-secound-color);
-  color: var(--light-highlight-color);
+input:checked ~ header,
+input:checked ~ section,
+input:checked ~ aside,
+input:checked ~ footer {
+  color: var(--dark-highlight-color);
 }
 
 input:checked ~ .background .timeline-item:hover {
@@ -66,13 +67,28 @@ body {
   position: relative;
 }
 
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vw;
+  height: 100%;
+  background: var(--light-background-color);
+  transition: all 1s ease;
+  color: var(--light-highlight-color);
+  box-sizing: border-box;
+  z-index: -1;
+  overflow-y: auto;
+}
+
 /*BOTAO DE MODO CLARO E ESCURO*/
 label {
-  position: fixed;
+  position: absolute;
   top: 1.5vw;
   right: 1.5vw;
-  width: 120px;
-  height: 45px;
+  width: 130px;
+  height: 40px;
   display: block;
   background: url('images/imagem1.jpg') center/cover;
   border: 5px solid rgba(198, 247, 253, 0.3);
@@ -85,13 +101,13 @@ label {
 label::after {
   content: '';
   position: absolute;
-  height: 92%;
-  width: 30%;
+  height: 53%;
+  width: 13%;
   background: #f2f2f2;
   opacity: .5;
   border-radius: 50%;
-  top: 4%;
-  left: 4%;
+  top: 25%;
+  left: 6%;
   transition: 0.8s ease;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
@@ -99,56 +115,42 @@ label::after {
 label::before {
   content: '';
   position: absolute;
-  height: 90%;
-  width: 30%;
+  height: 55%;
+  width: 13.8%;
   border: 5px solid rgba(198, 247, 253, 0.3);
   border-radius: 50%;
-  top: -6%;
-  left: 0;
+  top: 4%;
+  left: 1%;
   transition: 0.8s ease;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.18);
 }
 /*FIM BOTAO DE MODO CLARO E ESCURO*/
 
 
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 100vw;
-  background: var(--light-background-color);
-  transition: all 1s ease;
-  color: var(--light-highlight-color);
-  padding: 1.5vw;
-  box-sizing: border-box;
-  z-index: -1;
-  overflow-y: auto;
-}
-
 input {
   display: none;
-}
-
-img#natan {
-  position: relative;
-  margin: 0;
 }
 
 header {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  margin: 0 0 20px 0;
-  font-family: 'Unbounded', sans-serif;
+  margin: 0;
+  padding: 1.5vw;
 }
 
+img#natan {
+  position: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  width: 20%;
+}
 
 .sobre {
   position: relative;
-  margin-left: 38%;
-  margin-top: -55%;
-  width: 60%;
+  margin-left: 26.1%;
+  margin-top: -15%;
+  width: 74.1%;
 }
 
 .sobre h4 {
@@ -168,6 +170,8 @@ header {
 .full-timeline {
   position: relative;
   height: auto;
+  width: 80%;
+  margin-left: 19.5%;
 }
 
 .full-timeline h4 {
@@ -208,7 +212,7 @@ header {
 
 
 .timeline-item:hover p:first-of-type {
-  color: var(--light-secound-color);
+  color: var(--light-accent);
 }
 
 .timeline p {
@@ -216,7 +220,7 @@ header {
 }
 
 .timeline-item p.competencias {
-  color: var(--light-secound-color);
+  color: var(--dark-highlight-color);
   display: inline-block;
   margin-top: 10px;
   margin-right: 2px;
@@ -238,16 +242,122 @@ header {
 
 .timeline-date {
   font-weight: bold;
-  width: 70px;
+  min-width: 75px;
   font-size: 12px;
   text-align: center;
-  border: 1px solid transparent;
 }
 
 .timeline-content {
   margin-left: 20px;
 }
 
+#portfolio {
+  padding: 40px 0;
+  margin: 0 1.5vw;
+}
+
+#portfolio h4 {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.portfolio-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.portfolio-item {
+  width: calc(50% - 10px);
+  text-align: center;
+}
+
+.portfolio-item img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.portfolio-item h3 {
+  margin-top: 10px;
+}
+
+.portfolio-item p {
+  margin-top: 5px;
+}
+
+.portfolio-item a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: var(--light-accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all .3s ease;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-item a:hover {
+  transform: scale(1.2);
+}
+
+.thumbnail img {
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+
+footer {
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-content p {
+  flex: 1;
+  margin: 0;
+}
+
+.footer-links {
+  flex: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-links li {
+  margin: 0 10px;
+}
+
+.footer-links a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-line {
+  border: none;
+  border-top: 1px solid #ccc;
+  width: 90%;
+  margin: 0 auto;
+}
 
 
 
@@ -267,112 +377,12 @@ header {
 /*DESIGN ADAPTADO PARA TELAS DE SMARTPHONES*/
 /* Smartphones em orientação retrato */
 @media screen and (max-width: 480px) {
-  label {
-    top: 2vw;
-  }
-
-  h1 {
-    font-size: 34px;
-  }
-
-  h3 {
-    font-size: 22px;
-  }
-
-  h4 {
-    font-size: 12px;
-  }
-
-  p {
-    font-size: 12px;
-  }
-
-  img#natan {
-    width: 30vw;
-  }
-
-  .sobre {
-    top: 20vw;
-    font-size: 12px;
-  }
-
-  .full-timeline {
-    margin: 25% 0 0 13%;
-    width: 88%;
-  }
-
-  .full-timeline h4 {
-    margin-left: 28%;
-  }
-
-  .timeline-date {
-    min-width: 70px;
-    font-size: 9px;
-  }
-
-  .competencias {
-    font-size: 10px;
-  }
-
-  .background {
-    height: 100%;
-    width: 100%;
-  }
+  /* Estilos para Smartphones em orientação retrato */
 }
 
 /* Smartphones em orientação paisagem */
 @media screen and (min-width: 481px) and (max-width: 920px) and (orientation: landscape) {
-  label {
-    top: 2vw;
-  }
-
-  h1 {
-    font-size: 60px;
-  }
-
-  h3 {
-    font-size: 35px;
-  }
-
-  h4 {
-    font-size: 23px;
-  }
-
-  p {
-    font-size: 23px;
-  }
-
-  img#natan {
-    width: 30vw;
-  }
-
-  .sobre {
-    top: 20vw;
-    font-size: 23px;
-  }
-
-  .full-timeline {
-    margin: 25% 0 0 22.5%;
-    width: 77%;
-  }
-
-  .full-timeline h4 {
-    margin-left: 25%;
-  }
-
-  .timeline-date {
-    min-width: 100px;
-    font-size: 17px;
-  }
-
-  .competencias {
-    font-size: 17px;
-  }
-
-  .background {
-    height: 100%;
-    width: 100%;
-  }
+  /* Estilos para Smartphones em orientação paisagem */
 }
 /*FIM DESIGN ADAPTADO PARA TELAS DE SMARTPHONES*/
 
@@ -380,57 +390,7 @@ header {
 /*DESIGN ADAPTADO PARA TELAS DE TABLETS*/
 /* Tablets em orientação retrato */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  label {
-    top: 2vw;
-  }
-
-  h1 {
-    font-size: 55px;
-  }
-
-  h3 {
-    font-size: 30px;
-  }
-
-  h4 {
-    font-size: 23px;
-  }
-
-  p {
-    font-size: 23px;
-  }
-
-  img#natan {
-    width: 30vw;
-  }
-
-  .sobre {
-    top: 20vw;
-    font-size: 23px;
-  }
-
-  .full-timeline {
-    margin: 25% 0 0 20%;
-    width: 80%;
-  }
-
-  .full-timeline h4 {
-    margin-left: 25%;
-  }
-
-  .timeline-date {
-    min-width: 100px;
-    font-size: 17px;
-  }
-
-  .competencias {
-    font-size: 17px;
-  }
-
-  .background {
-    height: 100%;
-    width: 100%;
-  }
+  /* Estilos para Tablets em orientação retrato */
 }
 
 /* Tablets em orientação paisagem */
@@ -443,44 +403,21 @@ header {
 /*DESIGN ADAPTADO PARA TELAS DE NOTEBOOK*/
 /* Noteboks com telas de tamanho médio */
 @media screen and (min-width: 1200px) and (max-width: 1439px) {
-  header h1 {
-    font-size: 8vw;
-  }
-
-  header h3 {
-    font-size: 5vw;
-  }
-
-  img#natan {
-    width: 35vw;
-  }
-
-  .sobre {
-    position: absolute;
-    top: 21vw;
-    font-size: 2.5vw;
-  }
+  /* Estilos para Noteboks com telas de tamanho médio */
 }
 
 /* Noteboks com telas de tamanho grande */
 @media screen and (min-width: 1440px) {
-  /* Estilos para notebooks com telas de tamanho grande */
+  /* Estilos para Noteboks com telas de tamanho grande */
 }
 /*FIM DESIGN ADAPTADO PARA TELAS DE NOTEBOOK*/
-
 
 /*DESIGN ADAPTADO PARA TELAS DE COMPUTADORES*/
 
 /*DESIGN ADAPTADO PARA TELAS DE COMPUTADORES*/
 /* Computadores com telas de tamanho médio a grande */
 @media screen and (min-width: 1200px) {
-  header h1 {
-    font-size: 3vw;
-  }
-  
-  header h3 {
-    font-size: 1.5vw;
-  }
+  /* Estilos para Computadores com telas de tamanho médio a grande */
 }
 /*FIM DESIGN ADAPTADO PARA TELAS DE COMPUTADORES*/
 
