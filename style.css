@@ -412,6 +412,7 @@ footer {
   margin: 0;
   display: flex;
   justify-content: center;
+  vertical-align: middle;
 }
 
 .footer-links li {
@@ -423,81 +424,9 @@ footer {
   text-decoration: none;
 }
 
-.footer-links a:hover {
-  text-decoration: underline;
-}
-
 .footer-line {
   border: none;
   border-top: 1px solid #ccc;
   width: 90%;
   margin: 0 auto;
 }
-
-/*ESTRUTURA DOS COMPONENTES DO SITE*/
-
-
-
-/*SECTION SOBRE*/
-
-/*SECTION TIMELINE*/
-
-/*NOME, DESCRICAO E IMAGEM*/
-
-
-
-
-/*DESIGN ADAPTADO PARA TELAS DE SMARTPHONES*/
-/* Smartphones em orientação retrato */
-@media screen and (max-width: 480px) {
-  /* Estilos para Smartphones em orientação retrato */
-}
-
-/* Smartphones em orientação paisagem */
-@media screen and (min-width: 481px) and (max-width: 920px) and (orientation: landscape) {
-  /* Estilos para Smartphones em orientação paisagem */
-}
-/*FIM DESIGN ADAPTADO PARA TELAS DE SMARTPHONES*/
-
-
-/*DESIGN ADAPTADO PARA TELAS DE TABLETS*/
-/* Tablets em orientação retrato */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  /* Estilos para Tablets em orientação retrato */
-}
-
-/* Tablets em orientação paisagem */
-@media screen and (min-width: 1024px) and (max-width: 1199px) {
-  /* Estilos para tablets em orientação paisagem */
-}
-/*FIM DESIGN ADAPTADO PARA TELAS DE TABLETS*/
-
-
-/*DESIGN ADAPTADO PARA TELAS DE NOTEBOOK*/
-/* Noteboks com telas de tamanho médio */
-@media screen and (min-width: 1200px) and (max-width: 1439px) {
-  /* Estilos para Noteboks com telas de tamanho médio */
-}
-
-/* Noteboks com telas de tamanho grande */
-@media screen and (min-width: 1440px) {
-  /* Estilos para Noteboks com telas de tamanho grande */
-}
-/*FIM DESIGN ADAPTADO PARA TELAS DE NOTEBOOK*/
-
-/*DESIGN ADAPTADO PARA TELAS DE COMPUTADORES*/
-
-/*DESIGN ADAPTADO PARA TELAS DE COMPUTADORES*/
-/* Computadores com telas de tamanho médio a grande */
-@media screen and (min-width: 1200px) {
-  /* Estilos para Computadores com telas de tamanho médio a grande */
-}
-/*FIM DESIGN ADAPTADO PARA TELAS DE COMPUTADORES*/
-
-
-/*DESIGN ADAPTADO PARA TELAS GRANDES*/
-/* Telas grandes (como TVs) */
-@media screen and (min-width: 1920px) {
-  /* Estilos para telas grandes (como TVs) */
-}
-/*FIM DESIGN ADAPTADO PARA TELAS GRANDES*/
