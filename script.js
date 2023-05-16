@@ -11,7 +11,7 @@ function verificarHorario(){
 
 window.addEventListener("load", verificarHorario);
 
-/*Funcao de rolagem suave de página*/
+//Funcao de rolagem suave de página
 document.querySelectorAll('a.smooth-scroll').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();

@@ -41,9 +41,11 @@ input:checked ~ .background {
 
 input:checked ~ header,
 input:checked ~ nav ul li a,
+input:checked ~ main,
 input:checked ~ section,
 input:checked ~ aside,
-input:checked ~ .contato a,
+input:checked ~ .contato,
+input:checked ~ main .contato a,
 input:checked ~ footer,
 input:checked ~ footer a {
   color: var(--dark-highlight-color);
@@ -214,7 +216,7 @@ nav a:hover:before {
 }
 
 
-.full-timeline {
+.timeline-style {
   position: relative;
   margin-top: -30px;
   height: auto;
@@ -222,7 +224,7 @@ nav a:hover:before {
   margin-left: 19.5%;
 }
 
-.full-timeline h4 {
+.timeline-style h4 {
   text-align: center;
   margin-bottom: 10px;
 }
@@ -253,7 +255,7 @@ nav a:hover:before {
   background-color: rgba(211, 211, 211, .12);
 }
 
-.full-timeline:hover .timeline-item:not(:hover) {
+.timeline-style:hover .timeline-item:not(:hover) {
   opacity: 0.5;
 }
 
@@ -412,7 +414,7 @@ footer {
   margin: 0;
   display: flex;
   justify-content: center;
-  vertical-align: middle;
+  align-items: center;
 }
 
 .footer-links li {
@@ -429,4 +431,14 @@ footer {
   border-top: 1px solid #ccc;
   width: 90%;
   margin: 0 auto;
+}
+
+#seta {
+  font-size: 20px;
+  display: inline-block;
+  transform: rotate(-90deg);
+  color: var(--dark-highlight-color);
+  background: var(--light-accent);
+  border-radius: 50% 20% / 10% 40%;
+  padding: 5px;
 }
