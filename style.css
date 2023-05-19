@@ -15,8 +15,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/*DESIGN DAS CORES EM MODO CLARO*/
-
 /*DESIGN DAS CORES EM MODO ESCURO*/
 input:checked ~ label::after {
   left: 93.5%;
