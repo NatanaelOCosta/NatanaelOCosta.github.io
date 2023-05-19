@@ -15,6 +15,7 @@ html {
   scroll-behavior: smooth;
 }
 
+
 /*DESIGN DAS CORES EM MODO CLARO*/
 
 /*DESIGN DAS CORES EM MODO ESCURO*/
@@ -84,7 +85,7 @@ body {
   min-height: 100vw;
   height: 100%;
   background: var(--light-background-color);
-  transition: all 1s ease;
+  transition: all .3s ease;
   color: var(--light-highlight-color);
   box-sizing: border-box;
   z-index: -1;
@@ -152,6 +153,7 @@ img#natan {
   flex-wrap: wrap;
   margin: 0;
   width: 20%;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.18));
 }
 
 .sobre {
@@ -177,7 +179,7 @@ img#natan {
 
 nav {
   position: relative;
-  top: 120px;
+  top: 155px;
   left: 1.5vw;
   width: 15%;
 }
@@ -259,8 +261,6 @@ nav a:hover:before {
   opacity: 0.5;
 }
 
-
-
 .timeline-item:hover p:first-of-type {
   color: var(--light-accent);
 }
@@ -302,8 +302,51 @@ nav a:hover:before {
   margin-left: 20px;
 }
 
+/* Estilos para a seção de formações acadêmicas */
+.formacoes {
+  padding: 20px;
+  text-align: center;
+}
+
+.formacoes p {
+  color: #333;
+}
+
+.formacoes ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.formacoes li {
+  margin-bottom: 10px;
+}
+
+.divisao:first-of-type {
+  margin-top: 10px;
+}
+
+.divisao {
+  margin-bottom: 30px;
+}
+
+.divisao h5 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.divisao ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.divisao li {
+  margin-bottom: 5px;
+}
+
 #portfolio {
-  padding: 40px 0;
   margin: 0 1.5vw;
 }
 

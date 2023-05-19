@@ -1,4 +1,4 @@
-/*Funcao para alternar entre os modos noturno e diurno do site automaticamente de acordo com a hora*/
+//Funcao para alternar entre os modos noturno e diurno do site automaticamente de acordo com a hora
 function verificarHorario(){
   var inputDarkMode = document.getElementById("dark-mode");
   var dataAtual = new Date();
