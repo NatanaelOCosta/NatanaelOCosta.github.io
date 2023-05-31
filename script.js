@@ -11,13 +11,69 @@ function verificarHorario(){
 
 window.addEventListener("load", verificarHorario);
 
-//Funcao de rolagem suave de página
-document.querySelectorAll('a.smooth-scroll').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
 
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
+//Funcao de digitacao
+const typedTextSpan = document.querySelector(".typed-text");
+const cursorSpan = document.querySelector(".cursor");
+
+const textArray = ['Técnico em Informática', 'Técnico em Eletrotécnica', 'Bacharél em Ciência da Computação', 'um desenvolvedor fron-end!'];
+const typingDelay = 100;
+const erasingDelay = 50;
+const newTextDelay = 2000;
+let textArrayIndex = 0;
+let charIndex = 0;
+
+window.addEventListener("load", function() {
+  setTimeout(type, typingDelay);
+});
+
+function type() {
+  if (charIndex < textArray[textArrayIndex].length) {
+    if (!cursorSpan.classList.contains("typing")) {
+      cursorSpan.classList.add("typing");
+    }
+    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, typingDelay);
+  } else {
+    cursorSpan.classList.remove("typing");
+    setTimeout(erase, newTextDelay);
+  }
+}
+
+function erase() {
+  if (charIndex > 0) {
+    if (!cursorSpan.classList.contains("typing")) {
+      cursorSpan.classList.add("typing");
+    }
+    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(erase, erasingDelay);
+  } else {
+    cursorSpan.classList.remove("typing");
+    textArrayIndex++;
+    if (textArrayIndex >= textArray.length) {
+      textArrayIndex = 0;
+    }
+    setTimeout(type, typingDelay);
+  }
+}
+
+
+// Funcao de troca de slide do portifólio
+document.addEventListener('DOMContentLoaded', function() {
+  var stream = document.querySelector('.portfolio_stream');
+  var items = document.querySelectorAll('.portfolio_item');
+  var prev = document.querySelector('.portfolio_prev');
+  var next = document.querySelector('.portfolio_next');
+
+  prev.addEventListener('click', function() {
+    stream.insertBefore(items[items.length - 1], items[0]);
+    items = document.querySelectorAll('.portfolio_item');
+  });
+
+  next.addEventListener('click', function() {
+    stream.appendChild(items[0]);
+    items = document.querySelectorAll('.portfolio_item');
   });
 });

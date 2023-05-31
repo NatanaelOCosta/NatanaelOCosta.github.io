@@ -11,6 +11,12 @@
   --dark-highlight-color: #f4fefd;
 }
 
+::selection {
+  background-color: var(--light-accent);
+  color: #fff;
+  font-weight: bold;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -132,6 +138,42 @@ label::before {
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.18);
 }
 /*FIM BOTAO DE MODO CLARO E ESCURO*/
+
+/*ANIMAÇÃO DIGITAÇÃO*/
+.euSou {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.euSou p {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  overflow: hidden;
+}
+.euSou p span.typed-text {
+  font-weight: bold;
+  color: var(--light-accent);
+}
+.euSou p span.cursor {
+  display: inline-block;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+.euSou p span.cursor.typing {
+  animation: none;
+}
+@keyframes blink {
+  0%  { background-color: #ccc; }
+  49% { background-color: #ccc; }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+  100%  { background-color: #ccc; }
+}
+/*FIM ANIMAÇÃO DIGITAÇÃO*/
 
 input {
   display: none;
@@ -363,63 +405,124 @@ aside {
   margin-bottom: 5px;
 }
 
-#portfolio {
-  margin: 0 1.5vw;
-}
 
-#portfolio h4 {
+/* PORTIFOLIO */
+
+#portfolio > h4 {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.portfolio-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.portfolio-item {
-  width: calc(50% - 10px);
-  text-align: center;
-}
-
-.portfolio-item img {
+.portfolio {
+  position: relative;
   width: 100%;
-  max-height: 200px;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-.portfolio-item h3 {
-  margin-top: 10px;
-}
-
-.portfolio-item p {
-  margin-top: 5px;
-}
-
-.portfolio-item a {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 16px;
-  background-color: var(--light-accent);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: all .3s ease;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
-}
-
-.portfolio-item a:hover {
-  transform: scale(1.2);
-}
-
-.thumbnail img {
+  height: 100%;
+  max-height: 28vw;
   overflow: hidden;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
 }
+
+.portfolio_stream {
+  display: flex;
+  width: 100%;
+  height: 30vw;
+  max-height: 28vw !important;
+}
+
+.portfolio_item {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  transition: 1s all ease-in-out;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 5px;
+}
+
+.portfolio_item:hover {
+  cursor: pointer;
+}
+
+.portfolio_item:nth-child(1) {
+  left: 0;
+  z-index: 1;
+  transform: translateX(-100%) scale(.8);
+}
+
+.portfolio_item:nth-child(2) {
+  left: 0;
+  z-index: 2;
+  transform: translateX(-50%) scale(.8);
+}
+
+.portfolio_item:nth-child(3) {
+  left: 50%;
+  z-index: 4;
+  transform: translateX(-50%) scale(1);
+}
+
+.portfolio_item:nth-child(4) {
+  left: 100%;
+  z-index: 2;
+  transform: translateX(-50%) scale(.8);
+}
+
+.portfolio_item:nth-child(n+5) {
+  left: 100%;
+  z-index: 1;
+  transform: scale(.8);
+}
+
+.bg-1 {
+  background-image: url(/images/pswPage.png);
+}
+
+.bg-2 {
+  background-image: url(/images/nfcePage.png);
+}
+
+.bg-3 {
+  background-image: url(/images/githubPage.gif);
+}
+
+.bg-4 {
+  background-image: url(https://turismo.praiagrande.sp.gov.br/wp-content/uploads/2021/07/construcao.png);
+}
+
+.bg-5 {
+  background-image: url(https://turismo.praiagrande.sp.gov.br/wp-content/uploads/2021/07/construcao.png);
+}
+
+.bg-6 {
+  background-image: url(https://turismo.praiagrande.sp.gov.br/wp-content/uploads/2021/07/construcao.png);
+}
+
+.bg-7 {
+  background-image: url(https://turismo.praiagrande.sp.gov.br/wp-content/uploads/2021/07/construcao.png);
+}
+
+.portfolio_prev,
+.portfolio_next {
+  position: absolute;
+  top: 50%;
+  z-index: 4;
+  width: 50%;
+  height: 100%;
+  transform: translateX(-50%) translateY(-50%) scale(.8);
+  cursor: pointer;
+}
+
+.portfolio_prev {
+  left: 0;
+}
+
+.portfolio_next {
+  left: 100%;
+}
+
+
+
+/*PORTIFOLIO*/
 
 .contato {
   text-align: center;
