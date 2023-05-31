@@ -1,4 +1,4 @@
-//Funcao para alternar entre os modos noturno e diurno do site automaticamente de acordo com a hora
+// Funcao para alternar entre os modos noturno e diurno do site automaticamente de acordo com a hora
 function verificarHorario(){
   var inputDarkMode = document.getElementById("dark-mode");
   var dataAtual = new Date();
@@ -12,7 +12,7 @@ function verificarHorario(){
 window.addEventListener("load", verificarHorario);
 
 
-//Funcao de digitacao
+// Funcao de digitacao do header
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 
@@ -60,6 +60,15 @@ function erase() {
 }
 
 
+// Menu hamburger
+const hamburger = document.querySelector('.hamburger');
+const menuNav = document.querySelector('.menu-nav');
+
+hamburger.addEventListener('click', function() {
+  menuNav.classList.toggle('open');
+});
+
+
 // Funcao de troca de slide do portifólio
 document.addEventListener('DOMContentLoaded', function() {
   var stream = document.querySelector('.portfolio_stream');
@@ -76,13 +85,4 @@ document.addEventListener('DOMContentLoaded', function() {
     stream.appendChild(items[0]);
     items = document.querySelectorAll('.portfolio_item');
   });
-});
-
-
-//Menu hamburger
-const hamburger = document.querySelector('.hamburger');
-const menuNav = document.querySelector('.menu-nav');
-
-hamburger.addEventListener('click', function() {
-  menuNav.classList.toggle('open');
 });
