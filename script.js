@@ -77,3 +77,12 @@ document.addEventListener('DOMContentLoaded', function() {
     items = document.querySelectorAll('.portfolio_item');
   });
 });
+
+
+//Menu hamburger
+const hamburger = document.querySelector('.hamburger');
+const menuNav = document.querySelector('.menu-nav');
+
+hamburger.addEventListener('click', function() {
+  menuNav.classList.toggle('open');
+});

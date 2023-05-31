@@ -44,7 +44,7 @@ input:checked ~ .background {
 }
 
 input:checked ~ header,
-input:checked ~ main nav ul li a,
+input:checked ~ main nav.menu-nav ul li a,
 input:checked ~ main,
 input:checked ~ section,
 input:checked ~ aside,
@@ -53,6 +53,14 @@ input:checked ~ main .contato a,
 input:checked ~ footer,
 input:checked ~ footer a {
   color: var(--dark-highlight-color);
+}
+
+input:checked ~ main .hamburger .menu_line {
+  background-color: var(--dark-highlight-color);
+}
+
+input:checked ~ main nav.menu-nav.open ul li a {
+  color: var(--light-highlight-color);
 }
 
 input:checked ~ .background .timeline-item:hover {
@@ -224,7 +232,7 @@ img#natan {
   margin-top: 10px;
 }
 
-nav {
+nav.menu-nav {
   position: absolute;
   float: left;
   left: 1.5vw;
@@ -232,24 +240,35 @@ nav {
   margin-top: 28px;
 }
 
-nav ul {
+nav.menu-nav.open {
+  display: block;
+  left: 1.5vw;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease-in-out;
+  width: auto;
+  z-index: 2;
+  border-radius: 5px;
+}
+
+nav.menu-nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-nav li {
+nav.menu-nav li {
   position: relative;
 }
 
-nav a {
+nav.menu-nav a {
   display: block;
   padding: 10px;
   text-decoration: none;
-  color: #333;
+  color: var(--light-highlight-color);
 }
 
-nav a:before {
+nav.menu-nav a:before {
   content: "";
   position: absolute;
   left: 0;
@@ -261,8 +280,45 @@ nav a:before {
   transition: transform 0.3s;
 }
 
-nav a:hover:before {
+nav.menu-nav a:hover:before {
   transform: scaleY(1);
+}
+
+.hamburger {
+  position: absolute;
+  display: none;
+  cursor: pointer;
+  left: 1.5vw;
+}
+
+.hamburger .menu_line {
+  width: 25px;
+  height: 3px;
+  background-color: var(--light-highlight-color);
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+@media (max-width: 767px) {
+  nav.menu-nav {
+    left: -100px;
+  }
+
+  nav.menu-nav.open {
+    left: 1.5vw;
+  }
+
+  nav.menu-nav ul {
+    display: none;
+  }
+
+  nav.menu-nav.open ul {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
 }
 
 main {
@@ -313,7 +369,7 @@ aside {
   background-color: rgba(211, 211, 211, .12);
 }
 
-.timeline-style:hover .timeline-item:not(:hover) {
+.timeline:hover .timeline-item:not(:hover) {
   opacity: 0.5;
 }
 
@@ -424,9 +480,10 @@ aside {
 
 .portfolio {
   position: relative;
-  width: 100%;
+  width: 98.5%;
   height: 100%;
   max-height: 28vw;
+  margin: 0 1.5vw;
   overflow: hidden;
 }
 
@@ -621,7 +678,10 @@ footer {
 
 @media only screen and (max-width: 767px) {
   h1#natanael {
-    font-size: 1.5rem;
-    overflow-wrap: break-word;
+    font-size: 1.3rem;
+  }
+
+  .euSou p {
+    font-size: .9rem;
   }
 }
