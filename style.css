@@ -392,6 +392,13 @@ aside {
   opacity: 0.5;
 }
 
+@media (max-width: 767px) {
+  .timeline-item,
+  .timeline {
+    pointer-events: none;
+  }
+}
+
 .timeline-item:hover p:first-of-type {
   color: var(--light-accent);
 }
