@@ -63,10 +63,19 @@ function erase() {
 // Menu hamburger
 const hamburger = document.querySelector('.hamburger');
 const menuNav = document.querySelector('.menu-nav');
+const body = document.querySelector('body');
 
-hamburger.addEventListener('click', function() {
+hamburger.addEventListener('click', function(event) {
+  event.stopPropagation();
   menuNav.classList.toggle('open');
 });
+
+body.addEventListener('click', function() {
+  if (menuNav.classList.contains('open')) {
+    menuNav.classList.remove('open');
+  }
+});
+
 
 
 // Funcao de troca de slide do portifólio
