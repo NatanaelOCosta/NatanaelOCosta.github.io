@@ -36,6 +36,11 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+  cursor: url(/images/icons8-cursor-24.png), auto;
+}
+
+a {
+  cursor: url(/images/icons8-cursor-da-mão-28.png), auto;
 }
 
 .background {
@@ -119,7 +124,7 @@ label {
   background: url('images/imagem1.jpg') center/cover;
   border: 5px solid rgba(198, 247, 253, 0.3);
   border-radius: 100px;
-  cursor: pointer;
+  cursor: url(/images/icons8-cursor-da-mão-28.png), auto;
   transition: .8s ease;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
 }
@@ -238,6 +243,10 @@ img#natan {
   margin-top: 10px;
 }
 
+.sobre p:last-of-type {
+  text-align: right;
+}
+
 @media only screen and (max-width: 767px) {
   h1#natanael {
     font-size: 1.3rem;
@@ -304,7 +313,7 @@ nav.menu-nav a:hover:before {
 .hamburger {
   position: absolute;
   display: none;
-  cursor: pointer;
+  cursor: url(/images/icons8-cursor-da-mão-28.png), auto;
   left: 1.5vw;
 }
 
@@ -380,7 +389,7 @@ aside {
 }
 
 .timeline-item:hover {
-  cursor: pointer;
+  cursor: url(/images/icons8-cursor-da-mão-28.png), auto;
   border: 1px solid rgba(198, 247, 253, 0.3);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   background-color: #ffffff10;
@@ -488,6 +497,10 @@ aside {
 .divisao li {
   margin-bottom: 5px;
 }
+
+.parallax-section {
+  background: url(/images/ParallaxBg.png) center center / contain fixed;
+}
 /*FIM FORMACAO ACADEMICA*/
 /* PORTIFOLIO */
 #portfolio > h4 {
@@ -522,7 +535,7 @@ aside {
 }
 
 .portfolio_item:hover {
-  cursor: pointer;
+  cursor: url(/images/icons8-cursor-da-mão-28.png), auto;
 }
 
 .portfolio_item:nth-child(1) {
@@ -591,7 +604,7 @@ aside {
   width: 50%;
   height: 100%;
   transform: translateX(-50%) translateY(-50%) scale(.8);
-  cursor: pointer;
+  cursor: url(/images/icons8-cursor-da-mão-28.png), auto;
 }
 
 .portfolio_prev {
@@ -630,6 +643,11 @@ aside {
   color: #333;
   text-decoration: none;
   font-weight: bold;
+  transition: all .3s ease-in-out;
+}
+
+.contato a:hover {
+  transform: scale(1.05);
 }
 
 .contato img {
@@ -702,3 +720,25 @@ footer {
   padding: 5px;
 }
 /*FIM VOLTAR AO TOPO*/
+/*BARRA DE ROLAGEM*/
+/* Largura da barra de rolagem */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Cor de fundo da barra de rolagem */
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+/* Cor do "thumb" (o indicador da posição atual) da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  background-color: var(--dark-secound-accent);
+  border-radius: 5px;
+}
+
+/* Cor do "thumb" ao passar o mouse sobre a barra de rolagem */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--light-secound-color);
+}
+/*FIM BARRA DE ROLAGEM*/

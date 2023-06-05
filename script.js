@@ -95,3 +95,11 @@ document.addEventListener('DOMContentLoaded', function() {
     items = document.querySelectorAll('.portfolio_item');
   });
 });
+
+
+// Parallax
+window.addEventListener('scroll', function() {
+  var parallaxSection = document.querySelector('.parallax-section');
+  var scrolled = window.pageYOffset;
+  parallaxSection.style.backgroundPositionY = -(scrolled * 0.4) + 'px';
+});
