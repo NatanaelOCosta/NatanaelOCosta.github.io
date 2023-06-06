@@ -77,7 +77,6 @@ body.addEventListener('click', function() {
 });
 
 
-
 // Funcao de troca de slide do portifólio
 document.addEventListener('DOMContentLoaded', function() {
   var stream = document.querySelector('.portfolio_stream');
